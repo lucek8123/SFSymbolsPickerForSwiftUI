@@ -77,6 +77,9 @@ public struct SFSymbolsPicker: View {
                             } label: {
                                 Text("All")
                                     .padding(3)
+                                    .foregroundColor(category == .none ? .white : .blue)
+                                    .background(category == .none ? Color.blue : nil)
+                                    .clipShape(RoundedRectangle(cornerRadius: 20))
                                     .overlay(
                                         RoundedRectangle(cornerRadius: 20)
                                             .stroke(.blue, lineWidth: 1)
@@ -92,6 +95,9 @@ public struct SFSymbolsPicker: View {
                                     } label: {
                                         Text(caseCategory.rawValue)
                                             .padding(3)
+                                            .foregroundColor(category == caseCategory ? .white : .blue)
+                                            .background(category == caseCategory ? Color.blue : nil)
+                                            .clipShape(RoundedRectangle(cornerRadius: 20))
                                             .overlay(
                                                 RoundedRectangle(cornerRadius: 20)
                                                     .stroke(.blue, lineWidth: 1)
