@@ -13,6 +13,8 @@ struct UsageExample: View {
     
     @State private var isPresented = false
     
+    @State private var filter = Category.none
+    
     var body: some View {
         NavigationView {
             Form {
@@ -29,8 +31,7 @@ struct UsageExample: View {
                         Image(systemName: icon).font(.title3)
                     }
                 })
-                
-                SFSymbolsPicker(isPresented: $isPresented, icon: $icon, category: .games, axis: .vertical, haptic: true)
+                SFSymbolsPicker(isPresented: $isPresented, icon: $icon, category: filter, axis: .vertical, haptic: true, canSelectCategory: true)
                     
             }
             .navigationTitle("SFSymbolsPicker")
